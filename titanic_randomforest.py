@@ -184,36 +184,12 @@ kaggle_test["Survived"]=y_kaggle
 kaggle_test.head()
 kaggle_test.columns
 
-kaggle_last=kaggle_test.drop(['PCLASS', 'SEX', 'AGE', 'SIBSP', 'PARCH', 'FARE', 'NEW_CABIN_BOOL',
-       'NEW_NAME_COUNT', 'NEW_NAME_WORD_COUNT', 'NEW_NAME_DR',
-       'NEW_FAMILY_SIZE', 'NEW_IS_ALONE', 'NEW_AGE_PCLASS', 'EMBARKED_C',
-       'EMBARKED_Q', 'EMBARKED_S', 'NEW_TITLE_Master', 'NEW_TITLE_Miss',
-       'NEW_TITLE_Mr', 'NEW_TITLE_Mrs', 'NEW_TITLE_Rare', 'NEW_AGE_CAT_mature',
-       'NEW_AGE_CAT_senior', 'NEW_AGE_CAT_young', 'NEW_SEX_CAT_maturefemale',
-       'NEW_SEX_CAT_maturemale', 'NEW_SEX_CAT_seniorfemale',
-       'NEW_SEX_CAT_seniormale'], axis=1)
-
-kaggle_last.head()
-
-
 
 submission = pd.concat([test_prep['PASSENGERID'], pd.Series(y_kaggle)], axis=1)
 submission.columns = ['PassengerId', 'Survived']
 
 submission.to_csv('submission.csv', index=False)
-submission.to_csv('C:/Users/Lenovo/OneDrive/Masaüstü/VBObootcamp/projects/datas/_halekagglesubmission.csv', index=False)
-
-
-
-df_kaggle= pd.DataFrame({'PassengerId': test_prep['PASSENGERID'].loc[4], 'Survived': np.round(y_kaggle).astype(int) })
-df_kaggle.reset_index(drop=True, inplace=True)
-df_kaggle.to_csv('C:/Users/Lenovo/OneDrive/Masaüstü/VBObootcamp/projects/datas/halenur_kagglesubmission.csv', index=False)
-
-
-
-submission.to_csv('submission.csv', index=False)
-submission.to_csv('C:/Users/Lenovo/OneDrive/Masaüstü/VBObootcamp/projects/datas/_hkagglesubmission.csv', index=False)
-
+submission.to_csv('C:/Users/Lenovo/OneDrive/Masaüstü/VBObootcamp/projects/datas/halekagglesubmission.csv', index=False)
 
 ###Visualizations
 
